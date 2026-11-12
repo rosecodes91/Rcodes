@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ── Values ── */
+:root {
+    --papercolor: #212125;
+    --inky: #ffffff;
+    --inky-soft: #a49f96;
+    --inky-faint: #dfd3d5;
+    --lines: #d4cbdb;
+    --crimson: #ab3f2c;
+    --indigo: #5c7188;
+    --spine-w: 58px;
+    --waves: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%236b6b6c' stroke-width='0.6' stroke-opacity='0.18'%3E%3Ccircle cx='0' cy='0' r='40'/%3E%3Ccircle cx='0' cy='0' r='27'/%3E%3Ccircle cx='0' cy='0' r='14'/%3E%3Ccircle cx='80' cy='0' r='40'/%3E%3Ccircle cx='80' cy='0' r='27'/%3E%3Ccircle cx='80' cy='0' r='14'/%3E%3Ccircle cx='0' cy='80' r='40'/%3E%3Ccircle cx='0' cy='80' r='27'/%3E%3Ccircle cx='0' cy='80' r='14'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3Ccircle cx='80' cy='80' r='27'/%3E%3Ccircle cx='80' cy='80' r='14'/%3E%3Ccircle cx='40' cy='40' r='40'/%3E%3Ccircle cx='40' cy='40' r='27'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.Kiso-layout::selection {
+    background: var(--indigo);
+    color: var(--inky);
+}
+
+.Kiso-layout {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 7rem;
+    box-sizing: border-box;
+}
+
+.Kiso-layout br {
+    display: none
+}
+
+/* ── Kiso-head ── */
+.Kiso-head {
+    text-align: center;
+    padding-bottom: 2.75rem;
+    color: var(--inky-faint);
+}
+
+.Kiso-head__kicker {
+    margin: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    color: var(--crimson);
+}
+
+.Kiso-head__title {
+    margin: 0.75rem 0 0;
+    font-size: 2.15rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-indent: 0.4em;
+    lines-height: 1.4;
+}
+
+.Kiso-head__sub {
+    margin: 0.35rem 0 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-indent: 0.32em;
+    text-transform: uppercase;
+    color: var(--inky-soft);
+}
+
+.Kiso-head__meta {
+    margin: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    color: var(--inky-faint);
+}
+
+/* ── divider ── */
+.Kiso-rule {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 200px;
+    margin: 1.7rem auto 1.5rem;
+}
+
+.Kiso-rule::before,
+.Kiso-rule::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--lines);
+}
+
+.Kiso-rule span {
+    width: 5px;
+    height: 5px;
+    background: var(--inky-faint);
+    transform: rotate(45deg);
+}
+
+.KisoThread {
+    position: relative;
+    padding: 2.75rem 2.25rem 2rem;
+    border: 1px solid var(--lines);
+    background-color: transparent;
+    background-image: var(--waves);
+    background-size: 5em 5em;
+    background-position: center top;
+    background-repeat: repeat;
+}
+
+/* ── thread end ── */
+.Kiso-thread__end {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.Kiso-thread__end p {
+    margin: 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    color: var(--inky-faint);
+}
+
+.Kiso-head br,
+.Kiso-layout br,
+.Kiso-post__head br,
+.Kiso-post__spine br {
+    display: none
+}
+
+.Kiso-post__text br {
+    display: block !important
+}
+
+/* KISOROAD · CHRONOLOGY */
+.KisoRec {
+    --k-ink: #2f2a25;
+    --k-ink-soft: #6f665a;
+    --k-line: #d8cfbe;
+    --k-seal: #a33a30;
+    margin: 0;
+    font-family: "EB Garamond", "Shippori Mincho", "Times New Roman", serif;
+    color: var(--k-ink);
+    text-align: left;
+}
+
+.KisoRec * {
+    box-sizing: border-box;
+}
+
+/* ── one entry ─ */
+.KisoRec__item {
+    display: grid;
+    grid-template-columns: 5.25rem 1fr;
+    column-gap: 15px;
+}
+
+/* left column: date + vertical thread */
+.KisoRec__date {
+    position: relative;
+    padding: 0 15px 5px 0;
+    border-right: 1px solid var(--inky-faint);
+    text-align: right;
+    font-size: 11px;
+    line-height: 1.45;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--inky);
+}
+
+.KisoRec__date::after {
+    content: "";
+    position: absolute;
+    top: .55em;
+    right: -3.5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--inky-soft);
+}
+
+.KisoRec__date small {
+    display: block;
+    margin-top: .5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: .72;
+}
+
+.KisoRec__body {
+    padding-bottom: 20px;
+}
+
+.KisoRec__title {
+    margin: 0 5px 0px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 110%;
+    color: var(--inky) !important;
+}
+
+.KisoRec__title a {
+    color: var(--indigo) !important
+}
+
+.KisoRec__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 110%;
+    color: var(--lines);
+}
+
+.KisoRec__text+.KisoRec__text {
+    margin-top: 10px;
+}
+
+.KisoRec__text em {
+    font-style: italic;
+    color: var(--inky-soft);
+}
+
+.KisoRec__item:last-child {
+    padding-bottom: 0 !important;
+}
+
+.KisoRec__text br {
+    display: block
+}
